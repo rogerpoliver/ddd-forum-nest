@@ -4,6 +4,7 @@ import { CreateAccountController } from "./controllers/create-account.controller
 import { envSchema } from "../src/env";
 import { ConfigModule } from "@nestjs/config";
 import { AuthenticateController } from "./controllers/authenticate.controller";
+import { CreateQuestionController } from "./controllers/create-question.controller";
 
 @Module({
 	imports: [
@@ -12,7 +13,11 @@ import { AuthenticateController } from "./controllers/authenticate.controller";
 			isGlobal: true,
 		}),
 	],
-	controllers: [CreateAccountController, AuthenticateController],
+	controllers: [
+		CreateAccountController,
+		AuthenticateController,
+		CreateQuestionController,
+	],
 	providers: [PrismaService],
 })
 export class AppModule {}
