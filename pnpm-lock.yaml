@@ -29,9 +29,9 @@ importers:
       '@prisma/client':
         specifier: ^6.5.0
         version: 6.6.0(prisma@6.6.0(typescript@5.8.3))(typescript@5.8.3)
-      '@types/bcryptjs':
-        specifier: ^3.0.0
-        version: 3.0.0
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
       passport-jwt:
         specifier: ^4.0.1
         version: 4.0.1
@@ -66,6 +66,9 @@ importers:
       '@swc/core':
         specifier: ^1.11.21
         version: 1.11.21
+      '@types/bcryptjs':
+        specifier: ^3.0.0
+        version: 3.0.0
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.1
