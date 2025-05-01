@@ -1,5 +1,5 @@
-import { AppModule } from "@/app.module";
-import { PrismaService } from "@/prisma/prisma.service";
+import { AppModule } from "@/infra/app.module";
+import { PrismaService } from "@/infra/prisma/prisma.service";
 import type { INestApplication } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
 import request from "supertest";
@@ -21,11 +21,12 @@ describe("Create Account (E2E)", () => {
 	});
 
 	test("[POST] /accounts", async () => {
-		const response = await request(app.getHttpServer()).post("/accounts").send({
-			name: "John Doe",
-			email: "johndoe@example.com",
-			password: "123456",
-		});
+		const response = await request(app.getHttpServer()).post("/accounts")
+			.send({
+				name: "John Doe",
+				email: "johndoe@example.com",
+				password: "123456",
+			});
 
 		expect(response.statusCode).toBe(201);
 
