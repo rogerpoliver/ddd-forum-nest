@@ -4,26 +4,27 @@ import { PrismaQuestionsRepository } from "./prisma/repositories/prisma-question
 import { PrismaQuestionCommentsRepository } from "./prisma/repositories/prisma-question-comments-repository";
 import { PrismaQuestionAttachmentsRepository } from "./prisma/repositories/prisma-question-attachments-repository";
 import { PrismaAnswersRepository } from "./prisma/repositories/prisma-answers-repository";
-import { PrismaAnswerCommentRepository } from "./prisma/repositories/prisma-answer-comments-repository";
+import { PrismaAnswerCommentsRepository } from "./prisma/repositories/prisma-answer-comments-repository";
 import { PrismaAnswerAttachmentsRepository } from "./prisma/repositories/prisma-answer-attachments-repository";
-
-const prismaRepositories = [
-    PrismaQuestionsRepository,
-    PrismaQuestionCommentsRepository,
-    PrismaQuestionAttachmentsRepository,
-    PrismaAnswersRepository,
-    PrismaAnswerCommentRepository,
-    PrismaAnswerAttachmentsRepository,
-];
 
 @Module({
     providers: [
         PrismaService,
-        ...prismaRepositories,
+        PrismaQuestionsRepository,
+        PrismaQuestionCommentsRepository,
+        PrismaQuestionAttachmentsRepository,
+        PrismaAnswersRepository,
+        PrismaAnswerCommentsRepository,
+        PrismaAnswerAttachmentsRepository,
     ],
     exports: [
         PrismaService,
-        ...prismaRepositories,
+        PrismaQuestionsRepository,
+        PrismaQuestionCommentsRepository,
+        PrismaQuestionAttachmentsRepository,
+        PrismaAnswersRepository,
+        PrismaAnswerCommentsRepository,
+        PrismaAnswerAttachmentsRepository,
     ],
 })
 export class DatabaseModule {}
